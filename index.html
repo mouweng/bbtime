@@ -15,9 +15,11 @@
     <meta name="google" content="index,follow" />
     <meta name="googlebot" content="index,follow" />
     <meta name="verify" content="index,follow" />
-    <meta name="apple-mobile-web-app-title" content="b言b语">
+    <meta name="apple-mobile-web-app-title" content="废话连篇">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
 </head>
 
 <body>
@@ -27,7 +29,7 @@
     <main id="app">
         <aside>
             <p id="describe">
-                关你屁事 ｜ 关我屁事
+                关你屁事
             </p>
         </aside>
         <p class="tip">现在总共 bb 了 {{count}} 条</p>
@@ -41,30 +43,17 @@
         </div>
     </main>
     <footer>
-        <div class="center-text">
-            <a href="https://weibo.com/u/6226103853" target="_blank">
-                <img src="https://img.shields.io/badge/dynamic/json?color=ee0000&label=Weibo&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dweibo%26queryKey%3D6226103853&logo=Sina%20Weibo&link=https://weibo.com/u/6226103853"  alt="微博粉丝数"/>
-            </a>
-            <a href="https://space.bilibili.com/287263504" target="_blank">
-                <img src="https://img.shields.io/badge/dynamic/json?color=ff69b4&label=Bilibili&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dbilibili%26queryKey%3D287263504&logo=Bilibili&link=https://space.bilibili.com/287263504"  alt="Bilibili粉丝数"/>
-            </a>
-            <a href="https://github.com/mouweng" target="_blank">
-                <img src="https://img.shields.io/badge/dynamic/json?color=success&label=GitHub&query=%24.data.totalSubs&url=https%3A%2F%2Fapi.spencerwoo.com%2Fsubstats%2F%3Fsource%3Dgithub%26queryKey%3Dmouweng&logo=GitHub&link=https://github.com/mouweng"  alt="Github粉丝数" />
-            </a>
-        </div>
-        <p class="center-text">Copyright © 2020 Mouweng,All Rights Reserved</p>
+        <p class="center-text">Copyright © 2022 Mouweng,All Rights Reserved</p>
     </footer>
 </body>
-<script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
 <script type="text/javascript">
     var {
         Query
     } = AV;
     AV.init({
-        appId: "w1KK2UIwIbEI093wxe3x46lO-gzGzoHsz", //你的 leancloud 应用 id （设置-应用keys-AppID）
-        appKey: "Yqj2u1TCDmnIcgcoq2PgSI9Q", //你的 leancloud 应用 AppKey （设置-应用keys-AppKey）
-        serverURLs: 'https://w1kk2uiw.lc-cn-n1-shared.com'
+        appId: "le9HfawS9RWXQPxCjDo2BxQd-gzGzoHsz", //你的 leancloud 应用 id （设置-应用keys-AppID）
+        appKey: "wo0swn7kH8jRXBD3KKXdl7rR", //你的 leancloud 应用 AppKey （设置-应用keys-AppKey）
+        serverURLs: 'https://le9hfaws.lc-cn-n1-shared.com'
     });
 
     //设定存储数据的 className
@@ -86,11 +75,11 @@
 
     //识别 URL 链接
     function urlToLink(str) {
-        var re = /(http|ftp|https):\/\/[\w-]+(.[\w-]+)+([\w-.,@?^=%&:/~+#]*[\w-\@?^=%&/~+#])?/g;;
+        // var re = /(http|ftp|https):\/\/[\w-]+(.[\w-]+)+([\w-.,@?^=%&:/~+#]*[\w-\@?^=%&/~+#])?/g;;
 
-        str = str.replace(re, function(website) {
-            return "<a href='" + website + "' target='_blank'> <i class='iconfont icon-lianjie-copy'></i>链接 </a>";
-        });
+        // str = str.replace(re, function(website) {
+        //     return "<a href='" + website + "' target='_blank'> <i class='iconfont icon-lianjie-copy'></i>链接 </a>";
+        // });
         return str;
     }
 
@@ -265,6 +254,19 @@
         color: #666;
     }
 
+    img{
+        border-radius:2%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    video{
+        border-radius:2%;
+        width: 100%;
+        height: 100%;
+    }
+
 </style>
 
 </html>
+
